@@ -17,7 +17,7 @@ def main():
         if in_file == 'm':
             break
         elif os.path.isfile(in_file):
-            ext = os.path.splitext(in_file)
+            path, ext = os.path.splitext(in_file)
             if ext == '.pdf':
                 merge_files.append(in_file)
                 i += 1
@@ -31,7 +31,7 @@ def main():
 
     print("Generated file -> ", end='')
     out_file = input()
-    ext = os.path.splitext(out_file)
+    path, ext = os.path.splitext(out_file)
 
     if ext != '.pdf':
         out_file = out_file + '.pdf'
